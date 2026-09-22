@@ -86,7 +86,7 @@ const advantages = [
   },
   {
     title: "45+ Active Long-Term Clients",
-    text: "Right now, 45+ clients are actively running campaigns with us – proof that our results retain clients long-term.",
+    text: "Right now, 45+ clients are actively running campaigns with us. Proof that our results retain clients long-term.",
     icon: Handshake,
   },
   {
@@ -306,9 +306,9 @@ export default function Home() {
           <span>
             <i /> Google Ads for Taxi &amp; Tour Businesses
           </span>
-          <a href={WHATSAPP} target="_blank" rel="noreferrer">
-            <MessageCircle size={14} /> WhatsApp us
-          </a>
+          <span style={{ fontSize: "12px", color: "var(--muted)" }}>
+            Real Results, Not Promises
+          </span>
         </div>
       </div>
 
@@ -422,7 +422,7 @@ export default function Home() {
             <div className="budget-highlight-box">
               <div className="budget-tag">PROVEN PROFIT FORMULA</div>
               <h3>
-                Run Smart Google Ads with Just <span>₹500/Day</span> — Real Results, Not Promises.
+                Run Smart Google Ads with Just <span>₹500/Day</span>: Real Results, Not Promises.
               </h3>
               <div className="budget-points">
                 <div className="b-point">
@@ -656,7 +656,7 @@ export default function Home() {
             <div className="form-heading">
               <span>LET'S TALK GROWTH</span>
               <h3>Fill the Form</h3>
-              <p>Form will load in 3–5 seconds</p>
+              <p>Form will load in 3 to 5 seconds</p>
             </div>
             <iframe
               src="https://app.automatefunnels.in/form/ms-travel-marketing-lead-form-msefuhao"
@@ -687,9 +687,6 @@ export default function Home() {
             <a href="#booking-form" onClick={scrollToBookingForm}>
               <ArrowRight size={15} /> Book A Meeting At ₹49
             </a>
-            <a href={WHATSAPP} target="_blank" rel="noreferrer">
-              <MessageCircle size={15} /> WhatsApp us
-            </a>
           </div>
         </div>
         <div className="container copyright">
@@ -707,17 +704,6 @@ export default function Home() {
           <CTA className="sticky-btn pulse-btn-large">Book A Meeting At ₹49</CTA>
         </div>
       </div>
-
-      {/* Floating WhatsApp */}
-      <a
-        className="floating-whatsapp"
-        href={WHATSAPP}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Chat on WhatsApp"
-      >
-        <MessageCircle size={24} />
-      </a>
 
       {/* Lightbox Modal */}
       {lightboxIndex !== null && (
