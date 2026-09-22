@@ -27,14 +27,56 @@ import {
 const ASSET = "/assets/";
 const WHATSAPP = "https://wa.me/916388910079";
 
-const services = [
-  ["Taxi Services", "Capture high-intent searches from riders ready to book.", Search],
-  ["Outstation Cabs", "Own the routes and keywords that drive profitable trips.", Target],
-  ["Airport Taxi", "Turn airport transfer searches into confirmed customers.", Zap],
-  ["Tour Packages", "Fill your calendar with qualified package enquiries.", Sparkles],
-  ["Travel Agencies", "A repeatable lead engine built around your margins.", BarChart3],
-  ["Local Tour Operators", "Be visible when travellers are planning nearby.", Gauge],
-] as const;
+const specializedServices = [
+  {
+    title: "Taxi Services",
+    icon: (
+      <svg viewBox="0 0 512 512" fill="currentColor">
+        <path d="M462 241.64l-22-84.84c-9.6-35.2-41.6-60.8-76.8-60.8H352V64c0-17.67-14.33-32-32-32H192c-17.67 0-32 14.33-32 32v32h-11.2c-35.2 0-67.2 25.6-76.8 60.8l-22 84.84C21.41 248.04 0 273.47 0 304v48c0 23.63 12.95 44.04 32 55.12V448c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h256v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-40.88c19.05-11.09 32-31.5 32-55.12v-48c0-30.53-21.41-55.96-50-62.36zM96 352c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm20.55-112l17.2-66.36c2.23-8.16 9.59-13.64 15.06-13.64h214.4c5.47 0 12.83 5.48 14.85 12.86L395.45 240h-278.9zM416 352c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Outstation Cabs",
+    icon: (
+      <svg viewBox="0 0 512 512" fill="currentColor">
+        <path d="M416 320h-96c-17.6 0-32-14.4-32-32s14.4-32 32-32h96s96-107 96-160-43-96-96-96-96 43-96 96c0 25.5 22.2 63.4 45.3 96H320c-52.9 0-96 43.1-96 96s43.1 96 96 96h96c17.6 0 32 14.4 32 32s-14.4 32-32 32H185.5c-16 24.8-33.8 47.7-47.3 64H416c52.9 0 96-43.1 96-96s-43.1-96-96-96zm0-256c17.7 0 32 14.3 32 32s-14.3 32-32 32-32-14.3-32-32 14.3-32 32-32zM96 256c-53 0-96 43-96 96s96 160 96 160 96-107 96-160-43-96-96-96zm0 128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Airport Taxi",
+    icon: (
+      <svg viewBox="0 0 640 512" fill="currentColor">
+        <path d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM80.55 341.27c6.28 6.84 15.1 10.72 24.33 10.71l130.54-.18a65.62 65.62 0 0 0 29.64-7.12l290.96-147.65c26.74-13.57 50.71-32.94 67.02-58.31 18.31-28.48 20.3-49.09 13.07-63.65-7.21-14.57-24.74-25.27-58.25-27.45-29.85-1.94-59.54 5.92-86.28 19.48l-98.51 49.99-218.7-82.06a17.799 17.799 0 0 0-18-1.11L90.62 67.29c-10.67 5.41-13.25 19.65-5.17 28.53l156.22 98.1-103.21 52.38-72.35-36.47a17.804 17.804 0 0 0-16.07.02L9.91 230.22c-10.44 5.3-13.19 19.12-5.57 28.08l76.21 82.97z"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Tour Packages",
+    icon: (
+      <svg viewBox="0 0 512 512" fill="currentColor">
+        <path d="M502.63 214.63l-45.25-45.25c-6-6-14.14-9.37-22.63-9.37H384V80c0-26.51-21.49-48-48-48H176c-26.51 0-48 21.49-48 48v80H77.25c-8.49 0-16.62 3.37-22.63 9.37L9.37 214.63c-6 6-9.37 14.14-9.37 22.63V320h128v-16c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v16h128v-16c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v16h128v-82.75c0-8.48-3.37-16.62-9.37-22.62zM320 160H192V96h128v64zm64 208c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-16H192v16c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-16H0v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96H384v16z"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Travel Agencies",
+    icon: (
+      <svg viewBox="0 0 640 512" fill="currentColor">
+        <path d="M290.547 189.039c-20.295-10.149-44.147-11.199-64.739-3.89 42.606 0 71.208 20.475 85.578 50.576 8.576 17.899-5.148 38.071-23.617 38.071 18.429 0 32.211 20.136 23.617 38.071-14.725 30.846-46.123 50.854-80.298 50.854-.557 0-94.471-8.615-94.471-8.615l-66.406 33.347c-9.384 4.693-19.815.379-23.895-7.781L1.86 290.747c-4.167-8.615-1.111-18.897 6.946-23.621l58.072-33.069L108 159.861c6.39-57.245 34.731-109.767 79.743-146.726 11.391-9.448 28.341-7.781 37.51 3.613 9.446 11.394 7.78 28.067-3.612 37.516-12.503 10.559-23.618 22.509-32.509 35.57 21.672-14.729 46.679-24.732 74.186-28.067 14.725-1.945 28.063 8.336 29.73 23.065 1.945 14.728-8.336 28.067-23.062 29.734-16.116 1.945-31.12 7.503-44.178 15.284 26.114-5.713 58.712-3.138 88.079 11.115 13.336 6.669 18.893 22.509 12.224 35.848-6.389 13.06-22.504 18.617-35.564 12.226zm-27.229 69.472c-6.112-12.505-18.338-20.286-32.231-20.286a35.46 35.46 0 0 0-35.565 35.57c0 21.428 17.808 35.57 35.565 35.57 13.893 0 26.119-7.781 32.231-20.286 4.446-9.449 13.614-15.006 23.339-15.284-9.725-.277-18.893-5.835-23.339-15.284zm374.821-37.237c4.168 8.615 1.111 18.897-6.946 23.621l-58.071 33.069L532 352.16c-6.39 57.245-34.731 109.767-79.743 146.726-10.932 9.112-27.799 8.144-37.51-3.613-9.446-11.394-7.78-28.067 3.613-37.516 12.503-10.559 23.617-22.509 32.508-35.57-21.672 14.729-46.679 24.732-74.186 28.067-10.021 2.506-27.552-5.643-29.73-23.065-1.945-14.728 8.336-28.067 23.062-29.734 16.116-1.946 31.12-7.503 44.178-15.284-26.114 5.713-58.712 3.138-88.079-11.115-13.336-6.669-18.893-22.509-12.224-35.848 6.389-13.061 22.505-18.619 35.565-12.227 20.295 10.149 44.147 11.199 64.739 3.89-42.606 0-71.208-20.475-85.578-50.576-8.576-17.899 5.148-38.071 23.617-38.071-18.429 0-32.211-20.136-23.617-38.071 14.033-29.396 44.039-50.887 81.966-50.854l92.803 8.615 66.406-33.347c9.408-4.704 19.828-.354 23.894 7.781l44.455 88.926zm-229.227-18.618c-13.893 0-26.119 7.781-32.231 20.286-4.446 9.449-13.614 15.006-23.339 15.284 9.725.278 18.893 5.836 23.339 15.284 6.112 12.505 18.338 20.286 32.231 20.286a35.46 35.46 0 0 0 35.565-35.57c0-21.429-17.808-35.57-35.565-35.57z"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Local Tour Operators",
+    icon: (
+      <svg viewBox="0 0 512 512" fill="currentColor">
+        <path d="M505.04 442.66l-99.71-99.69c-4.5-4.5-10.6-7-17-7h-16.3c27.6-35.3 44-79.69 44-127.99C416.03 93.09 322.92 0 208.02 0S0 93.09 0 207.98s93.11 207.98 208.02 207.98c48.3 0 92.71-16.4 128.01-44v16.3c0 6.4 2.5 12.5 7 17l99.71 99.69c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.59.1-33.99zm-297.02-90.7c-79.54 0-144-64.34-144-143.98 0-79.53 64.35-143.98 144-143.98 79.54 0 144 64.34 144 143.98 0 79.53-64.35 143.98-144 143.98zm.02-239.96c-40.78 0-73.84 33.05-73.84 73.83 0 32.96 48.26 93.05 66.75 114.86a9.24 9.24 0 0 0 14.18 0c18.49-21.81 66.75-81.89 66.75-114.86 0-40.78-33.06-73.83-73.84-73.83zm0 96c-13.26 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"/>
+      </svg>
+    ),
+  },
+];
 
 const advantages = [
   {
@@ -393,40 +435,35 @@ export default function Home() {
       </section>
 
       {/* =========================================================
-          SERVICES: OUR SPECIALIZED STRATEGY (With Animations & Icon Glowing)
+          SERVICES: OUR SPECIALIZED STRATEGY (Matched to mstravelmarketing.in image)
           ========================================================= */}
-      <section className="section services" id="services">
+      <section className="strategy-clean-section" id="services">
         <div className="container">
-          <div className="section-intro centered">
-            <SectionLabel>WHAT WE DO</SectionLabel>
-            <h2>
-              Our Specialized<br />
-              <span>Strategy.</span>
-            </h2>
-            <p>
-              We create and manage high-converting Google Ads campaigns specially designed for travel businesses.
+          <div className="strategy-clean-header">
+            <span className="strategy-clean-subtitle">What We Do</span>
+            <h2 className="strategy-clean-title">Our Specialized Strategy</h2>
+            <p className="strategy-clean-desc">
+              We create and manage high-converting Google Ads campaigns specially designed for travel businesses
             </p>
           </div>
-          <div className="services-grid">
-            {services.map(([title, text, Icon], i) => (
-              <article
-                className="service-card"
-                key={title}
-                style={{ "--i": i } as React.CSSProperties}
+
+          <div className="strategy-cards-row">
+            {specializedServices.map((item, i) => (
+              <div
+                className="strategy-clean-card"
+                key={item.title}
+                style={{ "--card-i": i } as React.CSSProperties}
               >
-                <div className="icon-box">
-                  <Icon size={21} />
-                </div>
-                <h3>{title}</h3>
-                <p>{text}</p>
-                <a href="#contact">
-                  Learn more <ArrowRight size={16} />
-                </a>
-              </article>
+                <div className="strategy-card-icon">{item.icon}</div>
+                <h3 className="strategy-card-title">{item.title}</h3>
+              </div>
             ))}
           </div>
-          <div className="services-cta-wrap">
-            <CTA className="pulse-btn-large">Book A Meeting At ₹49</CTA>
+
+          <div className="strategy-btn-wrap">
+            <a href="#contact" className="strategy-green-btn">
+              Book A Meeting At ₹49
+            </a>
           </div>
         </div>
       </section>
