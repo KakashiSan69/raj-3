@@ -103,7 +103,7 @@ const proofImages = [
 ];
 
 function CTA({
-  children = "Book a Free Strategy Call",
+  children = "Book A Meeting At ₹49",
   className = "",
 }: {
   children?: React.ReactNode;
@@ -349,7 +349,7 @@ export default function Home() {
 
           {/* Pulsing CTA Button below video */}
           <div className="hero-cta-center">
-            <CTA className="pulse-btn-large">Book a Free Strategy Call</CTA>
+            <CTA className="pulse-btn-large">Book A Meeting At ₹49</CTA>
           </div>
         </div>
       </section>
@@ -434,7 +434,7 @@ export default function Home() {
             ))}
           </div>
           <div className="services-cta-wrap">
-            <CTA className="pulse-btn-large">Book a Free Strategy Call</CTA>
+            <CTA className="pulse-btn-large">Book A Meeting At ₹49</CTA>
           </div>
         </div>
       </section>
@@ -550,7 +550,7 @@ export default function Home() {
           </div>
 
           <div className="services-cta-wrap" style={{ marginTop: 45 }}>
-            <CTA className="pulse-btn-large">Book a Free Strategy Call</CTA>
+            <CTA className="pulse-btn-large">Book A Meeting At ₹49</CTA>
           </div>
         </div>
       </section>
@@ -561,7 +561,7 @@ export default function Home() {
       <section className="section offer" id="contact">
         <div className="container contact-grid">
           <div className="strategy-panel">
-            <SectionLabel>1-ON-1 TRAVEL STRATEGY SESSION</SectionLabel>
+            <SectionLabel>1-ON-1 TRAVEL CONSULTATION (AT ₹49)</SectionLabel>
             <h2>
               Start filling your<br />
               <span>booking calendar.</span>
@@ -609,7 +609,7 @@ export default function Home() {
             <iframe
               src="https://app.automatefunnels.in/form/ms-travel-marketing-lead-form-msefuhao"
               name="lovable-form-ms-travel-marketing-lead-form-msefuhao"
-              title="Book a free strategy call"
+              title="Book A Meeting At ₹49"
               style={{ border: "none", width: "100%", minHeight: 650 }}
               loading="lazy"
             />
@@ -633,7 +633,7 @@ export default function Home() {
           <p>Performance marketing for taxi, cab &amp; tour businesses across India.</p>
           <div className="footer-links">
             <a href="#contact">
-              <ArrowRight size={15} /> Book a free strategy call
+              <ArrowRight size={15} /> Book A Meeting At ₹49
             </a>
             <a href={WHATSAPP} target="_blank" rel="noreferrer">
               <MessageCircle size={15} /> WhatsApp us
@@ -652,7 +652,7 @@ export default function Home() {
             <span>Ready to scale your taxi &amp; tour business?</span>
             <strong>Get 100+ Bookings in Just 30 Days</strong>
           </div>
-          <CTA className="sticky-btn pulse-btn-large">Book a Free Strategy Call</CTA>
+          <CTA className="sticky-btn pulse-btn-large">Book A Meeting At ₹49</CTA>
         </div>
       </div>
 
