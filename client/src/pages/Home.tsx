@@ -144,15 +144,34 @@ const proofImages = [
   "WhatsApp-Image-2026-04-11-at-10.54.05-AM.jpeg",
 ];
 
+const scrollToBookingForm = (e?: React.MouseEvent) => {
+  if (e) e.preventDefault();
+  const target = document.getElementById("booking-form") || document.getElementById("contact");
+  if (target) {
+    const navOffset = 80;
+    const targetY = target.getBoundingClientRect().top + window.pageYOffset - navOffset;
+    window.scrollTo({ top: targetY, behavior: "smooth" });
+    if (window.history.pushState) {
+      window.history.pushState(null, "", "#booking-form");
+    }
+  }
+};
+
 function CTA({
   children = "Book A Meeting At ₹49",
   className = "",
+  onClick,
 }: {
   children?: React.ReactNode;
   className?: string;
+  onClick?: (e: React.MouseEvent) => void;
 }) {
   return (
-    <a className={`cta-primary ${className}`} href="#contact">
+    <a
+      className={`cta-primary ${className}`}
+      href="#booking-form"
+      onClick={onClick || scrollToBookingForm}
+    >
       <span>{children}</span>
       <ArrowRight size={18} />
     </a>
@@ -461,7 +480,11 @@ export default function Home() {
           </div>
 
           <div className="strategy-btn-wrap">
-            <a href="#contact" className="strategy-green-btn">
+            <a
+              href="#booking-form"
+              className="strategy-green-btn"
+              onClick={scrollToBookingForm}
+            >
               Book A Meeting At ₹49
             </a>
           </div>
@@ -629,7 +652,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="embedded-form">
+          <div className="embedded-form" id="booking-form">
             <div className="form-heading">
               <span>LET'S TALK GROWTH</span>
               <h3>Fill the Form</h3>
@@ -661,7 +684,7 @@ export default function Home() {
           </div>
           <p>Performance marketing for taxi, cab &amp; tour businesses across India.</p>
           <div className="footer-links">
-            <a href="#contact">
+            <a href="#booking-form" onClick={scrollToBookingForm}>
               <ArrowRight size={15} /> Book A Meeting At ₹49
             </a>
             <a href={WHATSAPP} target="_blank" rel="noreferrer">

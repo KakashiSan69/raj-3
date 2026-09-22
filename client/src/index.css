@@ -567,29 +567,34 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px 24px;
+  gap: 16px 20px;
   flex-wrap: wrap;
-  margin-top: 38px;
+  margin-top: 32px;
   width: 100%;
 }
 
 .outcome-pill {
-  flex: 1 1 240px;
-  max-width: 310px;
-  min-width: 210px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #ffffff;
   color: #000000;
   border: 3px solid #ff6b35;
   border-radius: 9999px;
-  padding: 13px 32px;
+  padding: 12px 32px;
+  height: auto;
+  min-height: unset;
+  max-height: unset;
   font-family: 'DM Sans', sans-serif;
-  font-size: clamp(17px, 1.8vw, 22px);
+  font-size: clamp(16px, 1.6vw, 20px);
   font-weight: 800;
   text-align: center;
   letter-spacing: -0.01em;
   box-shadow: 0 8px 24px rgba(255, 107, 53, 0.22);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   user-select: none;
+  box-sizing: border-box;
 }
 
 .outcome-pill:hover {
@@ -601,14 +606,20 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
 @media (max-width: 768px) {
   .outcome-pills-row {
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
     align-items: center;
+    width: 100%;
   }
   .outcome-pill {
     width: 100%;
-    max-width: 340px;
-    padding: 12px 24px;
-    font-size: 17px;
+    max-width: 320px;
+    height: auto;
+    min-height: unset;
+    max-height: unset;
+    padding: 12px 20px;
+    font-size: 16px;
+    flex: 0 0 auto;
+    box-sizing: border-box;
   }
 }
 
@@ -735,18 +746,43 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
 /* Responsive adjustments */
 @media (max-width: 800px) {
   .hero-pattern-section {
-    padding: 30px 0 50px;
+    padding: 24px 0 36px;
   }
   .badge-green-pill {
-    font-size: 14px;
-    padding: 11px 20px;
+    font-size: 13px;
+    padding: 10px 16px;
+    width: 100%;
+    max-width: 340px;
+    border-radius: 10px;
   }
   .badge-red-pill {
     font-size: 12px;
-    padding: 9px 16px;
+    padding: 8px 14px;
+    width: 100%;
+    max-width: 340px;
+    border-radius: 8px;
   }
   .hero-arrow-points {
-    gap: 12px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    max-width: 290px;
+    margin: 18px auto 0;
+  }
+  .budget-section {
+    padding: 42px 0;
+  }
+  .budget-highlight-box {
+    padding: 24px 16px;
+  }
+  .budget-highlight-box h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .budget-lead-text {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 20px;
   }
   .outcomes-grid {
     grid-template-columns: 1fr;
@@ -757,7 +793,22 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
   .sticky-inner {
     flex-direction: column;
     text-align: center;
-    gap: 10px;
+    gap: 8px;
+  }
+  .sticky-bottom-cta {
+    padding: 10px 0 12px;
+  }
+  .sticky-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 11px 20px !important;
+    font-size: 14px !important;
+  }
+  .pulse-btn-large {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px 20px;
+    font-size: 16px;
   }
 }
 
