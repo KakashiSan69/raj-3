@@ -762,13 +762,14 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
 }
 
 /* =========================================================
-   OUR SPECIALIZED STRATEGY (Matched to mstravelmarketing.in image)
+   OUR SPECIALIZED STRATEGY (Violet Theme matching website)
    ========================================================= */
 .strategy-clean-section {
-  background: #ffffff;
-  color: #111827;
-  padding: 85px 0 90px;
+  background: radial-gradient(ellipse at 50% 15%, #2a1452 0%, #130a27 60%, #0a0616 100%);
+  color: #ffffff;
+  padding: 85px 0 95px;
   position: relative;
+  border-block: 1px solid #2d1954;
 }
 
 .strategy-clean-header {
@@ -782,12 +783,12 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
   color: #f59e0b;
   font-size: 19px;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   margin-bottom: 8px;
 }
 
 .strategy-clean-title {
-  color: #0f172a;
+  color: #ffffff;
   font-size: clamp(28px, 3.8vw, 42px);
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -796,7 +797,7 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
 }
 
 .strategy-clean-desc {
-  color: #64748b;
+  color: #b4a9c6;
   font-size: 16px;
   line-height: 1.6;
   max-width: 680px;
@@ -811,10 +812,10 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
 }
 
 .strategy-clean-card {
-  background: #ffffff;
+  background: linear-gradient(145deg, #1c1234 0%, #130c26 100%);
   border-radius: 14px;
-  border: 1px solid #eef2f6;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid #3a2564;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
   padding: 26px 12px 22px;
   display: flex;
   flex-direction: column;
@@ -828,8 +829,8 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
 
 .strategy-clean-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 0 16px rgba(255, 87, 34, 0.18);
-  border-color: #ffd8cc;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(155, 108, 255, 0.28);
+  border-color: #9b6cff;
 }
 
 .strategy-card-icon {
@@ -841,10 +842,12 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
   justify-content: center;
   margin-bottom: 14px;
   transition: transform 0.25s ease;
+  filter: drop-shadow(0 4px 10px rgba(255, 87, 34, 0.35));
 }
 
 .strategy-clean-card:hover .strategy-card-icon {
   transform: scale(1.12);
+  color: #ff7043;
 }
 
 .strategy-card-icon svg {
@@ -853,7 +856,7 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
 }
 
 .strategy-card-title {
-  color: #0f172a;
+  color: #ffffff;
   font-size: 15px;
   font-weight: 700;
   line-height: 1.25;
@@ -877,14 +880,14 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
   border-radius: 9999px;
   text-decoration: none;
   border: none;
-  box-shadow: 0 0 24px rgba(0, 230, 118, 0.75), 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 26px rgba(0, 230, 118, 0.75), 0 4px 14px rgba(0, 0, 0, 0.3);
   transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
 }
 
 .strategy-green-btn:hover {
   background: #00c853;
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 0 35px rgba(0, 230, 118, 0.95), 0 6px 18px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 0 38px rgba(0, 230, 118, 0.95), 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .strategy-green-btn:active {
