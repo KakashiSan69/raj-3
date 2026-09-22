@@ -562,58 +562,54 @@ footer{padding:37px 0 20px;border-top:1px solid #292435;background:#08070b}.foot
   font-size: 18px;
 }
 
-/* 3 Outcome Cards Section */
-.outcomes-section {
-  padding: 60px 0;
-  background: #08070b;
+/* 3 Outcome Pills (as shown in user image) */
+.outcome-pills-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 24px;
+  flex-wrap: wrap;
+  margin-top: 38px;
+  width: 100%;
 }
 
-.outcomes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.outcome-card {
-  background: linear-gradient(145deg, #120f1a, #0b0911);
-  border: 1px solid #282136;
-  border-radius: 12px;
-  padding: 32px 24px;
+.outcome-pill {
+  flex: 1 1 240px;
+  max-width: 310px;
+  min-width: 210px;
+  background: #ffffff;
+  color: #000000;
+  border: 3px solid #ff6b35;
+  border-radius: 9999px;
+  padding: 13px 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(17px, 1.8vw, 22px);
+  font-weight: 800;
   text-align: center;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: -0.01em;
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  user-select: none;
 }
 
-.outcome-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(168, 122, 255, 0.6);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(109, 63, 229, 0.25);
+.outcome-pill:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(255, 107, 53, 0.45);
+  border-color: #ff5018;
 }
 
-.outcome-icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 12px;
-  background: radial-gradient(circle at 35% 35%, #34195a, #1a0f30);
-  border: 1px solid rgba(168, 122, 255, 0.4);
-  color: #c4a5ff;
-  display: grid;
-  place-items: center;
-  margin: 0 auto 18px;
-  box-shadow: 0 0 18px rgba(155, 108, 255, 0.3);
-}
-
-.outcome-card h3 {
-  font-size: 22px;
-  color: #ffffff;
-  margin: 0 0 10px;
-  letter-spacing: -0.03em;
-}
-
-.outcome-card p {
-  color: #9a92a6;
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 0;
+@media (max-width: 768px) {
+  .outcome-pills-row {
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+  .outcome-pill {
+    width: 100%;
+    max-width: 340px;
+    padding: 12px 24px;
+    font-size: 17px;
+  }
 }
 
 /* Services CTA wrap */

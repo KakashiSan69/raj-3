@@ -357,6 +357,9 @@ export default function Home() {
       {/* =========================================================
           VALUE PROPOSITION & DAILY BUDGET SECTION
           ========================================================= */}
+      {/* =========================================================
+          VALUE PROPOSITION & DAILY BUDGET SECTION
+          ========================================================= */}
       <section className="section budget-section">
         <div className="container budget-container">
           <div className="budget-intro-card">
@@ -379,25 +382,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* =========================================================
-          3 OUTCOME CARDS
-          ========================================================= */}
-      <section className="section outcomes-section">
-        <div className="container">
-          <div className="outcomes-grid">
-            {outcomes.map((item) => (
-              <div className="outcome-card" key={item.title}>
-                <div className="outcome-icon">
-                  <item.icon size={26} />
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </div>
-            ))}
+            {/* The 3 Orange-bordered Outcome Pills directly below budget box */}
+            <div className="outcome-pills-row">
+              <div className="outcome-pill">More Visibility</div>
+              <div className="outcome-pill">More Calls</div>
+              <div className="outcome-pill">More Bookings</div>
+            </div>
           </div>
         </div>
       </section>
