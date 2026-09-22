@@ -12,10 +12,12 @@ import {
   Handshake,
   Menu,
   MessageCircle,
+  Moon,
   PhoneCall,
   Play,
   Search,
   Sparkles,
+  Sun,
   Target,
   Users,
   X,
@@ -144,18 +146,8 @@ const proofImages = [
   "WhatsApp-Image-2026-04-11-at-10.54.05-AM.jpeg",
 ];
 
-const scrollToBookingForm = (e?: React.MouseEvent) => {
-  if (e) e.preventDefault();
-  const target = document.getElementById("booking-form") || document.getElementById("contact");
-  if (target) {
-    const navOffset = 80;
-    const targetY = target.getBoundingClientRect().top + window.pageYOffset - navOffset;
-    window.scrollTo({ top: targetY, behavior: "smooth" });
-    if (window.history.pushState) {
-      window.history.pushState(null, "", "#booking-form");
-    }
-  }
-};
+const CHECKOUT_URL =
+  "https://pay.marketingsafalta.com/checkout/product/4ef42814-1c13-4bdd-9cb8-29e0b2117ba5?template=2";
 
 function CTA({
   children = "Book A Meeting At ₹49",
@@ -166,11 +158,20 @@ function CTA({
   className?: string;
   onClick?: (e: React.MouseEvent) => void;
 }) {
+  const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      onClick(e);
+      return;
+    }
+    e.preventDefault();
+    window.location.href = CHECKOUT_URL;
+  };
+
   return (
     <a
       className={`cta-primary ${className}`}
-      href="#booking-form"
-      onClick={onClick || scrollToBookingForm}
+      href={CHECKOUT_URL}
+      onClick={handleClick}
     >
       <span>{children}</span>
       <ArrowRight size={18} />
@@ -247,7 +248,23 @@ export default function Home() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [zoom, setZoom] = useState(1);
   const [showStickyBar, setShowStickyBar] = useState(false);
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("ms_theme");
+      return saved === "light" ? "light" : "dark";
+    }
+    return "dark";
+  });
   const touchStart = useRef<number | null>(null);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("ms_theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   const allGalleryImages = [
     ...reviewImages.map((r) => r.img),
@@ -340,6 +357,20 @@ export default function Home() {
             <button onClick={() => nav("contact")}>Contact</button>
             <CTA className="header-cta" />
           </nav>
+          <div className="header-theme-wrap">
+            <button
+              className="theme-toggle-btn"
+              onClick={toggleTheme}
+              aria-label="Toggle dark / light theme"
+              title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            >
+              {theme === "dark" ? (
+                <Sun size={20} className="theme-icon-sun" />
+              ) : (
+                <Moon size={20} className="theme-icon-moon" />
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -481,9 +512,12 @@ export default function Home() {
 
           <div className="strategy-btn-wrap">
             <a
-              href="#booking-form"
+              href={CHECKOUT_URL}
               className="strategy-green-btn"
-              onClick={scrollToBookingForm}
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = CHECKOUT_URL;
+              }}
             >
               Book A Meeting At ₹49
             </a>
@@ -608,15 +642,15 @@ export default function Home() {
       </section>
 
       {/* =========================================================
-          LEAD FORM SECTION
+          CONSULTATION & DIRECT CHECKOUT SECTION (Form removed as requested)
           ========================================================= */}
       <section className="section offer" id="contact">
-        <div className="container contact-grid">
-          <div className="strategy-panel">
+        <div className="container">
+          <div className="strategy-panel final-cta-panel">
             <SectionLabel>1-ON-1 TRAVEL CONSULTATION (AT ₹49)</SectionLabel>
             <h2>
               Start filling your<br />
-              <span>booking calendar.</span>
+              <span>booking calendar today.</span>
             </h2>
             <p>
               Tell us about your taxi, cab, tour package or travel agency. We will understand your routes, analyze high-intent search demand, and build a profitable campaign blueprint tailored to your margins.
@@ -650,21 +684,9 @@ export default function Home() {
                 </span>
               </div>
             </div>
-          </div>
-
-          <div className="embedded-form" id="booking-form">
-            <div className="form-heading">
-              <span>LET'S TALK GROWTH</span>
-              <h3>Fill the Form</h3>
-              <p>Form will load in 3 to 5 seconds</p>
+            <div style={{ marginTop: 35 }}>
+              <CTA className="pulse-btn-large">Book A Meeting At ₹49</CTA>
             </div>
-            <iframe
-              src="https://app.automatefunnels.in/form/ms-travel-marketing-lead-form-msefuhao"
-              name="lovable-form-ms-travel-marketing-lead-form-msefuhao"
-              title="Book A Meeting At ₹49"
-              style={{ border: "none", width: "100%", minHeight: 650 }}
-              loading="lazy"
-            />
           </div>
         </div>
       </section>
@@ -684,7 +706,13 @@ export default function Home() {
           </div>
           <p>Performance marketing for taxi, cab &amp; tour businesses across India.</p>
           <div className="footer-links">
-            <a href="#booking-form" onClick={scrollToBookingForm}>
+            <a
+              href={CHECKOUT_URL}
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = CHECKOUT_URL;
+              }}
+            >
               <ArrowRight size={15} /> Book A Meeting At ₹49
             </a>
           </div>
