@@ -287,14 +287,6 @@ export default function Home() {
           ========================================================= */}
       <section className="hero-pattern-section" id="top">
         <div className="container hero-pattern-container">
-          {/* Centered Logo */}
-          <div className="hero-logo-wrap">
-            <img
-              src={`${ASSET}ms_travel_marketing_logo-removebg-preview.png`}
-              alt="MS Travel Marketing"
-              className="hero-center-logo"
-            />
-          </div>
 
           {/* Green Pill Badge */}
           <div className="badge-green-pill">
